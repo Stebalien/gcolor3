@@ -1,70 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
     <title>Gcolor3 by Unia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <section class="page-header">
+      <h1 class="project-name">Gcolor3</h1>
+      <h2 class="project-tagline">A simple color chooser written in GTK+ 3</h2>
+      <a href="https://github.com/Unia/gcolor3/releases/latest" class="btn">Download latest</a>
+      <a href="https://github.com/Unia/gcolor3/releases" class="btn">Older releases</a>
+      <a href="https://github.com/Unia/gcolor3" class="btn">View on GitHub</a>
+    </section>
 
-        <header>
-          <h1>Gcolor3</h1>
-          <h2>A simple color chooser written in GTK3</h2>
-        </header>
+    <section class="main-content">
+      <p>
+        Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike
+        <a href="http://gcolor2.sourceforge.net/">Gcolor2</a>, but uses the newer GTK+ version to
+	better integrate into your modern desktop. It has the same feature set as Gcolor2, except
+	that recent versions of Gcolor3 use an <code>.ini</code> style file to save colors (older
+	versions use the same file as Gcolor2).
+      </p>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/Unia/gcolor3/archive/v1.0.zip" id="download-zip" class="button"><span>Version 1.0</span></a>
-          <a href="https://github.com/Unia/gcolor3/archive/v1.0.tar.gz" id="download-tar-gz" class="button"><span>Version 1.0</span></a>
-          <a href="https://github.com/Unia/gcolor3/archive/v1.2.1.zip" id="download-zip" class="button"><span>Version 1.2.1</span></a>
-          <a href="https://github.com/Unia/gcolor3/archive/v1.2.1.tar.gz" id="download-tar-gz" class="button"><span>Version 1.2.1</span></a>
-          <a href="https://github.com/Unia/gcolor3" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+      <p>
+        Compare Gcolor3 with Gcolor2:
+	<img src="https://github.com/Unia/gcolor3/raw/master/comparison.png" id="comparison" alt="Screenshot">
+      </p>
 
-        <hr>
+      <h1><a id="versions" class="anchor" href="#versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Versions</h1>
 
-        <section id="main_content">
-          <h3>
-<a name="gcolor3" class="anchor" href="#gcolor3"><span class="octicon octicon-link"></span></a>Gcolor3</h3>
+      <p>
+        The most recent version of Gcolor3 requires GTK+ 3.12. If your distribution uses an older
+        version, please see <a href="https://github.com/Unia/gcolor3/releases">the older releases</a>.
+	Functionally, all releases are the same; the only exception is that since version 2.0
+	Gcolor3 uses an <code>.ini</code> style format to save colors.
+      </p>
 
-<p>Gcolor3 is a color selection dialog written in GTK3. It is much alike Gcolor2, but uses the newer GTK version to integrate better in your modern desktop. It has the same feature set as Gcolor2 and even uses the same file to save colors for compatibility reasons.</p>
+      <h1><a id="translations" class="anchor" href="#translations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Translations</h1>
 
-<p>Compare Gcolor3 with Gcolor2:
-<img src="https://github.com/Unia/gcolor3/raw/master/comparison.png" alt="Screenshot"></p>
+      <p>
+        You can help translating Gcolor3 to your own language! Currently, Gcolor3 is available in
+	British English, Dutch, French, German, Norwegian and Swedish. New translations are always
+	welcome! For instructions on how to translate Gcolor3, see the project
+	<a href="https://github.com/Unia/gcolor3/blob/master/README.md">README</a>.
+      </p>
 
-<h2>
-<a name="versions" class="anchor" href="#versions"><span class="octicon octicon-link"></span></a>Versions</h2>
+      <h1><a id="bugs" class="anchor" href="#bugs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bugs</h1>
 
-<p>The most recent version of Gcolor3 requires GTK 3.10. If your distribution uses an older version, please use Gcolor3 version 1.0. Functionally, both releases are the same - only the UI has changed!</p>
+      <p>
+        For any bug or feature request, please <a href="https://github.com/Unia/gcolor3/issues/new">create an issue</a>
+	on <a href="https://github.com/Unia/gcolor3">GitHub</a>.
+      </p>
 
-<h2>
-<a name="translations" class="anchor" href="#translations"><span class="octicon octicon-link"></span></a>Translations</h2>
+      <footer class="site-footer">
+        <span class="site-footer-owner">
+	  <a href="https://github.com/Unia/gcolor3">Gcolor3</a> is maintained by <a href="https://github.com/Unia">Jente Hidskes</a>.
+	  Copyright © 2013-2015 <a href="mailto:hjdskes@gmail.com">Jente Hidskes</a>.
+	</span>
 
-<p>You can help translate Gcolor3 in your language! Currently, Gcolor3 is available in Dutch, German, French, Norwegian, British English and Swedish. New translations are always welcome! For instructions on how to translate Gcolor3, see the <a href="https://github.com/Unia/gcolor3/blob/master/README.md">README</a> on <a href="https://github.com/Unia/gcolor3">GitHub</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-<h2>
-<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
+    </section>
 
-<p>For any bug or request <a href="https://github.com/Unia/gcolor3/issues">fill an issue</a> on <a href="https://github.com/Unia/gcolor3">GitHub</a>.</p>
-        </section>
 
-        <footer>
-          Gcolor3 is maintained by <a href="https://github.com/Unia">Unia</a><br>
-          Copyright © 2013 <a href="mailto:jthidskes@outlook.com">Jente Hidskes</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
-    </div>
   </body>
 </html>
+
