@@ -60,6 +60,7 @@
                     <signal name="changed" handler="gcolor3_window_selection_changed" object="Gcolor3Window" swapped="no"/>
                   </object>
                 </child>
+                <signal name="key-release-event" handler="gcolor3_window_treeview_key_released" object="Gcolor3Window" swapped="no"/>
               </object>
             </child>
           </object>

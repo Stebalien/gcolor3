@@ -75,6 +75,15 @@ hex_value (GdkColor *color) {
 				color->blue / 256);
 }
 
+static void
+set_color_in_clipboard (const gchar *color)
+{
+	GtkClipboard *clipboard;
+
+	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+	gtk_clipboard_set_text (clipboard, color, -1);
+}
+
 static GdkPixbuf *
 create_pixbuf_from_xpm (const gchar *hex)
 {
@@ -194,6 +203,33 @@ gcolor3_window_picker_changed (GtkColorSelection *picker, gpointer user_data)
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (picker), &priv->current);
+}
+
+static gboolean
+gcolor3_window_treeview_key_released (UNUSED GtkWidget *widget,
+				      GdkEvent *event,
+				      gpointer user_data)
+{
+	GdkEventKey *key_event = (GdkEventKey *) event;
+	Gcolor3WindowPrivate *priv;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	gchar *color;
+
+	if ((key_event->state & GDK_CONTROL_MASK) != GDK_CONTROL_MASK
+			|| key_event->keyval != GDK_KEY_c) {
+		return GDK_EVENT_PROPAGATE;
+	}
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
+	if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
+		gtk_tree_model_get (model, &iter, COLOR_VALUE, &color, -1);
+		set_color_in_clipboard (color);
+		g_free (color);
+	}
+
+	return GDK_EVENT_PROPAGATE;
 }
 
 /* FIXME: delete button is sensitive when switching to saved colors, even though there are none. */
@@ -435,6 +471,7 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_treeview_key_released);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
 }
 
